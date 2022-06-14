@@ -1,5 +1,5 @@
-import { Blog } from "../layouts/main";
 import Head from "next/head";
+import { MainLayout } from "../layouts/main";
 import type { NextPage } from "next";
 
 const Home: NextPage = () => {
@@ -8,7 +8,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Glaamadalen</title>
       </Head>
-      <Blog></Blog>
+      <MainLayout>MainContent</MainLayout>
     </>
   );
 };

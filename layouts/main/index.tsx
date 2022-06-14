@@ -33,12 +33,15 @@ const PageWrapper = styled.div`
     }
   }
 `;
-export const Blog = () => {
+interface LayoutProps {
+  children?: React.ReactNode;
+}
+export const MainLayout = ({ children }: LayoutProps) => {
   return (
     <PageWrapper>
       <Header />
       <Navbar />
-      <Main>Main</Main>
+      <Main>{children}</Main>
       <Aside />
       <Footer />
     </PageWrapper>

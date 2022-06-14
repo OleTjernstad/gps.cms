@@ -3,14 +3,14 @@ import styled from "styled-components";
 const ButtonElem = styled.button`
   background: transparent;
   border-radius: 3px;
-  border: 2px solid palevioletred;
-  color: palevioletred;
-  margin: 0.25em 0.25em;
+  border: 2px solid #40474c;
+  color: #40474c;
+  margin: 0 0.25em;
   padding: 0.25em 1em;
   font-size: 1.1rem;
 
   &:hover {
-    filter: brightness(60%);
+    background: #ce5a9c;
   }
 `;
 interface ButtonProps {
