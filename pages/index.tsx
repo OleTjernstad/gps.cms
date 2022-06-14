@@ -1,4 +1,4 @@
-import { Blog } from "../layouts/blog";
+import { Blog } from "../layouts/main";
 import Head from "next/head";
 import type { NextPage } from "next";
 

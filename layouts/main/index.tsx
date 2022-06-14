@@ -1,7 +1,7 @@
-import { Aside } from "./blog/aside";
-import { Footer } from "./blog/footer";
-import { Header } from "./blog/header";
-import { Navbar } from "./blog/navbar";
+import { Aside } from "./aside";
+import { Footer } from "./footer";
+import { Header } from "./header";
+import { Navbar } from "./navbar";
 import styled from "styled-components";
 
 const Main = styled.main`
