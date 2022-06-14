@@ -10,7 +10,7 @@ const FooterElem = styled.footer`
   );
   width: 100%;
   height: 120px;
-  margin-top: auto;
+  padding: 0.25em;
 `;
 
 export const Footer = () => {

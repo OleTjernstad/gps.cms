@@ -41,7 +41,7 @@ export const Header = () => {
           <Image layout="fill" src={Logo} alt="logo" />
         </LogoBlock>
         <TitleBlock>
-          <Title>Glaamadalens Plastikbolderes Søgeforæning</Title>
+          <Title>Glaamadalens Plastikbeholderes Søgeforæning</Title>
         </TitleBlock>
       </HeaderContainer>
     </HeaderElem>
