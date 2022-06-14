@@ -2,7 +2,8 @@ import { Button } from "../../components/button";
 import styled from "styled-components";
 
 const NavbarElem = styled.nav`
-  background-color: #c2bebe;
+  grid-column: 1 / 3;
+  background: #c1d5e6;
   display: flex;
   flex-direction: row;
   justify-content: end;

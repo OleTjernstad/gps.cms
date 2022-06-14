@@ -8,8 +8,8 @@ const HeaderElem = styled.header`
     rgba(243, 230, 251, 1) 11%,
     rgba(182, 148, 233, 1) 100%
   );
-  width: 100%;
-  top: 0px;
+  grid-column: 1 / -1;
+  top: 0;
 `;
 
 const HeaderContainer = styled.div`
