@@ -14,6 +14,7 @@ const PageWrapper = styled.div`
   height: calc(100vh);
   box-shadow: 0 0 3px rgba(black, 0.33);
 
+  color: #002626;
   display: grid;
   grid-template-columns: minmax(10px, 1fr) minmax(10px, 3fr);
   grid-template-rows: min-content min-content 1fr min-content;
@@ -21,7 +22,6 @@ const PageWrapper = styled.div`
 
   > * {
     padding: 1rem;
-    text-align: center;
   }
 
   @media (max-width: 600px) {
