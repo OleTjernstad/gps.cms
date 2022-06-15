@@ -43,8 +43,12 @@ const Tags = styled.div`
   padding: 0.1em 0.25em;
   font-size: 0.95rem;
 `;
-
-export const ArticleCard = () => {
+interface ArticleCardProps {
+  title: string;
+  ingress: string;
+  tags: string[];
+}
+export const ArticleCard = ({ ingress, tags, title }: ArticleCardProps) => {
   return (
     <div style={{ padding: "10px" }}>
       <Card>
@@ -58,17 +62,13 @@ export const ArticleCard = () => {
           />
         </ImageWrapper>
         <TextWrapper>
-          <CardTitle>Kano på glomma</CardTitle>
-          <Excerpt>
-            Hei allesammen det er vel på tide at jeg også piper litt her. Som
-            dere alle har fått med dere så har foreningen fått seg kano til
-            utleie. Og nå lurer dere sikkert på åffer han VikingMoh babler
-            febrilsk om dette nå som kanosesongen er over……
-          </Excerpt>
+          <CardTitle>{title}</CardTitle>
+          <Excerpt>{ingress}</Excerpt>
         </TextWrapper>
         <CardFooter>
-          <Tags>Kano</Tags>
-          <Tags>Glomma</Tags>
+          {tags.map((tag) => (
+            <Tags key={tag}>{tag}</Tags>
+          ))}
         </CardFooter>
       </Card>
     </div>
