@@ -1,13 +1,21 @@
 import Image from "next/image";
+import Link from "next/link";
 import Test from "../../public/image/test.jpg";
 import styled from "styled-components";
 
+const Anchor = styled.a`
+  text-decoration: none;
+`;
 const Card = styled.article`
   border-radius: 10px;
   box-shadow: 0 0 14px 2px rgba(0, 0, 0, 0.3);
   background-color: #c1d5e6;
   width: 100%;
+  &:hover {
+    background-color: #abbecc;
+  }
 `;
+
 const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
@@ -21,9 +29,12 @@ const TextWrapper = styled.div`
 
 const CardTitle = styled.h2`
   font-size: 1.4rem;
+  color: #002626;
 `;
 
-const Excerpt = styled.p``;
+const Excerpt = styled.p`
+  color: #002626;
+`;
 
 const CardFooter = styled.div`
   width: 100%;
@@ -52,19 +63,23 @@ export const ArticleCard = ({ ingress, tags, title }: ArticleCardProps) => {
   return (
     <div style={{ padding: "10px" }}>
       <Card>
-        <ImageWrapper>
-          <Image
-            style={{ borderRadius: "10px 10px 0 0" }}
-            src={Test}
-            layout="responsive"
-            objectFit="contain"
-            alt="test image"
-          />
-        </ImageWrapper>
-        <TextWrapper>
-          <CardTitle>{title}</CardTitle>
-          <Excerpt>{ingress}</Excerpt>
-        </TextWrapper>
+        <Link href={"/test"} passHref>
+          <Anchor>
+            <ImageWrapper>
+              <Image
+                style={{ borderRadius: "10px 10px 0 0" }}
+                src={Test}
+                layout="responsive"
+                objectFit="contain"
+                alt="test image"
+              />
+            </ImageWrapper>
+            <TextWrapper>
+              <CardTitle>{title}</CardTitle>
+              <Excerpt>{ingress}</Excerpt>
+            </TextWrapper>
+          </Anchor>
+        </Link>
         <CardFooter>
           {tags.map((tag) => (
             <Tags key={tag}>{tag}</Tags>
