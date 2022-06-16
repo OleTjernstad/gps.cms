@@ -12,6 +12,10 @@ const ButtonElem = styled.button`
   &:hover {
     background: #ce5a9c;
   }
+
+  &:focus {
+    background: #ce5a9c;
+  }
 `;
 interface ButtonProps {
   children: string;
