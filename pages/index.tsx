@@ -6,7 +6,18 @@ import type { NextPage } from "next";
 import data from "../data/posts.json";
 import styled from "styled-components";
 
-const Home: NextPage = () => {
+interface IndexProps {
+  posts: {
+    id: number;
+    title: string;
+    content: string;
+    publishDate: string;
+    Author: string;
+    tags: string[];
+    ingress: string;
+  }[];
+}
+export default function indexPage({ posts }: IndexProps) {
   return (
     <>
       <Head>
@@ -24,15 +35,15 @@ const Home: NextPage = () => {
             <TopArticleWrapper>
               {
                 <ArticleCard
-                  ingress={data.posts[0].ingress}
-                  tags={data.posts[0].tags}
-                  title={data.posts[0].title}
-                  key={data.posts[0].id}
+                  ingress={posts[0].ingress}
+                  tags={posts[0].tags}
+                  title={posts[0].title}
+                  key={posts[0].id}
                 />
               }
             </TopArticleWrapper>
 
-            {data.posts.slice(1).map((post) => (
+            {posts.slice(1).map((post) => (
               <ArticleCard
                 ingress={post.ingress}
                 tags={post.tags}
@@ -45,9 +56,13 @@ const Home: NextPage = () => {
       </MainLayout>
     </>
   );
-};
+}
 
-export default Home;
+export async function getStaticProps() {
+  return {
+    props: { posts: data.posts }, // will be passed to the page component as props
+  };
+}
 
 const ArticleWrapper = styled.div`
   display: grid;
