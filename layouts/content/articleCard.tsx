@@ -58,12 +58,18 @@ interface ArticleCardProps {
   title: string;
   ingress: string;
   tags: string[];
+  slug: string;
 }
-export const ArticleCard = ({ ingress, tags, title }: ArticleCardProps) => {
+export const ArticleCard = ({
+  ingress,
+  tags,
+  title,
+  slug,
+}: ArticleCardProps) => {
   return (
     <div style={{ padding: "10px" }}>
       <Card>
-        <Link href={"/test"} passHref>
+        <Link href={`posts/${slug}`} passHref>
           <Anchor>
             <ImageWrapper>
               <Image

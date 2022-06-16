@@ -2,7 +2,6 @@ import { ArticleCard } from "../layouts/content/articleCard";
 import Head from "next/head";
 import { Landing } from "../layouts/content/landing";
 import { MainLayout } from "../layouts/main";
-import type { NextPage } from "next";
 import data from "../data/posts.json";
 import styled from "styled-components";
 
@@ -15,6 +14,7 @@ interface IndexProps {
     Author: string;
     tags: string[];
     ingress: string;
+    slug: string;
   }[];
 }
 export default function indexPage({ posts }: IndexProps) {
@@ -38,6 +38,7 @@ export default function indexPage({ posts }: IndexProps) {
                   ingress={posts[0].ingress}
                   tags={posts[0].tags}
                   title={posts[0].title}
+                  slug={posts[0].slug}
                   key={posts[0].id}
                 />
               }
@@ -48,6 +49,7 @@ export default function indexPage({ posts }: IndexProps) {
                 ingress={post.ingress}
                 tags={post.tags}
                 title={post.title}
+                slug={post.slug}
                 key={post.id}
               />
             ))}
