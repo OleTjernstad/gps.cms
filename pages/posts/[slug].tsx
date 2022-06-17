@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { MainLayout } from "../../layouts/main";
+import { PostLayout } from "../../layouts/content/post";
 import data from "../../data/posts.json";
 
 interface PostProps {
@@ -20,7 +21,9 @@ export default function Post({ post }: PostProps) {
       <Head>
         <title>Glaamadalen</title>
       </Head>
-      <MainLayout></MainLayout>
+      <MainLayout>
+        <PostLayout title={post.title}></PostLayout>
+      </MainLayout>
     </>
   );
 }

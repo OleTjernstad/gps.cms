@@ -11,7 +11,7 @@ const Main = styled.main`
 
 const PageWrapper = styled.div`
   background-color: #f3faff;
-  height: calc(100vh);
+  min-height: calc(100vh);
   box-shadow: 0 0 3px rgba(black, 0.33);
 
   color: #002626;
