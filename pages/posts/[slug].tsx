@@ -22,7 +22,7 @@ export default function Post({ post }: PostProps) {
         <title>Glaamadalen</title>
       </Head>
       <MainLayout>
-        <PostLayout title={post.title}></PostLayout>
+        <PostLayout title={post.title} content={post.content}></PostLayout>
       </MainLayout>
     </>
   );

@@ -6,8 +6,9 @@ const Title = styled.h1``;
 
 interface LandingProps {
   title: string;
+  content: React.ReactNode;
 }
-export const PostLayout = ({ title }: LandingProps) => {
+export const PostLayout = ({ title, content }: LandingProps) => {
   return (
     <PostWrapper>
       <ImageWrapper>
@@ -18,22 +19,24 @@ export const PostLayout = ({ title }: LandingProps) => {
           objectFit="contain"
           alt="test image"
         />
-        <figcaption>An elephant at sunset</figcaption>
+        <Caption>An elephant at sunset</Caption>
       </ImageWrapper>
 
       <Title>{title}</Title>
+      {content}
     </PostWrapper>
   );
 };
 
-const ImageWrapper = styled.figure`
-  position: relative;
-  flex-grow: 1;
-  border-radius: 10px;
-  background-color: #c1d5e6;
+const Caption = styled.figcaption`
+  padding: 5px;
+  padding-left: 10px;
 `;
 
-const PostWrapper = styled.div`
-  padding-left: 5px;
-  padding-right: 5px;
+const ImageWrapper = styled.figure`
+  border-radius: 10px;
+  background-color: #c1d5e6;
+  margin: 0;
 `;
+
+const PostWrapper = styled.div``;
